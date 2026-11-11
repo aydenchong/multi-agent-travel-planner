@@ -1,5 +1,7 @@
-
 from fastapi import FastAPI
+
+from backend.app.schemas.trip import TripRequest
+
 
 app = FastAPI(
     title="VoyageAI API",
@@ -13,4 +15,13 @@ def health_check():
     return {
         "status": "healthy",
         "service": "voyageai-api"
+    }
+
+
+@app.post("/api/v1/trips/validate")
+def validate_trip(request: TripRequest):
+    return {
+        "valid": True,
+        "message": "Trip request validated successfully",
+        "trip": request.model_dump(mode="json")
     }
