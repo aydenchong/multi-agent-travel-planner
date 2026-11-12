@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     debug: bool = True
 
     gemini_api_key: str | None = None
+    gemini_model: str = "gemini-3.8-flash"
 
     database_url: str | None = None
     google_maps_api_key: str | None = None
