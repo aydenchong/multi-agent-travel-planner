@@ -1,12 +1,15 @@
 from fastapi import FastAPI
-
+from backend.app.core.config import get_settings
 from backend.app.schemas.trip import TripRequest
 
 
+settings = get_settings()
+
 app = FastAPI(
-    title="VoyageAI API",
+    title=settings.app_name,
     description="Backend API for the VoyageAI Multi-Agent Travel Planner",
     version="0.1.0",
+    debug=settings.debug,
 )
 
 
