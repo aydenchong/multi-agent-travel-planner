@@ -8,7 +8,8 @@ class Settings(BaseSettings):
     app_env: str = "development"
     debug: bool = True
 
-    openai_api_key: str | None = None
+    gemini_api_key: str | None = None
+
     database_url: str | None = None
     google_maps_api_key: str | None = None
     flight_api_key: str | None = None
